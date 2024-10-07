@@ -5,7 +5,7 @@ from folium import Choropleth, LayerControl
 from branca.element import Template, MacroElement
 
 def generate_choropleth(source, year,data,m):
-    df = pd.read_csv("res/carbonemissions.csv")
+    df = pd.read_csv("../res/carbonemissions.csv")
 
     data['current_year'] = year #set the year so we can access it for the marker
     data['current_source'] = source #set the source so we can access it for the marker
@@ -44,7 +44,7 @@ def generate_choropleth(source, year,data,m):
     filtered_rows['CO2eq'].fillna(0, inplace=True)
 
     # read the GeoJSON data containing Nunavut and NWT
-    geojson_file_path = 'res/georef-canada-province@publicTEST.geojson'
+    geojson_file_path = '../res/georef-canada-province@publicTEST.geojson'
 
     with open(geojson_file_path, 'r') as f:
         geojson_data = json.load(f)

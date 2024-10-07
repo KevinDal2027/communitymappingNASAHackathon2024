@@ -7,13 +7,13 @@ import json
 def generateAlbertaMap(option, year):
     global albertamap
     albertamap = folium.Map(location=[55, -115.5834], tiles="OpenStreetMap", zoom_start=5)
-    df = pd.read_csv("res/carbonemissions.csv")
+    df = pd.read_csv("../res/carbonemissions.csv")
     generate_alberta_heatmap(option, year) 
-    albertamap.save('src/static/albertaMap.html')
+    albertamap.save('./static/albertaMap.html')
 
 def generate_alberta_heatmap(option, year):
 
-    data = main.loadJSON(f"res/{option}_{year}_data.json")
+    data = main.loadJSON(f"../res/{option}_{year}_data.json")
 
     #test source and year
     #set source and year
